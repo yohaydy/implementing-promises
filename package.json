@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node_modules/.bin/tape test/**/*.js | node_modules/.bin/tap-spec"
+    "test": "tape test/**/*.js | tap-spec"
   },
   "repository": {
     "type": "git",
