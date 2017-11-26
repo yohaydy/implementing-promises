@@ -30,6 +30,19 @@ test('resolution handler is called when promise is resolved', function (t) {
     });
 });
 
+test('resolution handler is called when promise is resolved within synchronious executor function', function(t) {
+    var testString = 'foo';
+
+    var promise = new MyPromise(function (resolve) {
+        resolve(testString);
+    });
+
+    promise.then(function (string) {
+        t.equal(string, testString);
+        t.end();
+    });
+});
+
 test('promise supports many resolution handlers', function (t) {
 
     var testString = 'foo';

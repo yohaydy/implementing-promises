@@ -4,6 +4,7 @@ function MyPromise(executorfn) {
 	var deferred;
 
 	function resolver(_value) {
+		state = "fulfilled";
 		value = _value;
 		if (deferred) {
 			deferred(value);
@@ -18,7 +19,7 @@ function MyPromise(executorfn) {
 			// resolver() has not been called yet
 			deferred = resolutionHandler;
 		}
-	}
+	};
 
 	executorfn(resolver);
 }
