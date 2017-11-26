@@ -10,7 +10,7 @@ function MyPromise(executorfn) {
 		}
 	}
 
-	function then(resolutionHandler) {
+	this.then = function(resolutionHandler) {
 		if (state === "fulfilled") {
 			// resolver() has been called already
 			resolutionHandler(value);
